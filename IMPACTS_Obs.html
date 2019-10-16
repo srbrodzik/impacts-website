@@ -1,0 +1,584 @@
+<div class="summary">
+
+  <style>
+    p.std {
+       margin-left:3cm;margin-right:3cm;
+    }
+  </style>
+
+  <p class="std">
+    <table width="100%" border=1 cellspacing=1 cellpadding=10>
+      <tr valign="baseline" align="left" bgcolor=#cc9999>
+	<td colspan=1><h2>Browse IMPACTS Research Products:</h2></td>
+      </tr>
+      <tr>
+	<td>
+	  <table border=0 cellspacing=0 cellpadding=5>
+	    <tr>
+	      <td colspan=3 bgcolor=#c2c2c2><font size=+2>Aircraft Products</font><br>
+
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><a href="/missions/ER2-Payload-Mace.pdf">ER-2</a></td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="er2"  />
+		      <select name="prod" >
+			<option value="ampr">Adv Microwave Precip Radiometer (AMPR)</option>
+			<option value="cpl">Cloud Physics Lidar (CPL)</option>
+			<option value="crs">Cloud Radar System (CRS)</option>
+			<option value="cosmir">Conical-Scanning mm-Wave Imaging Radiometer (CoSMIR)</option>
+			<option value="exrad">ER-2 Doppler Radar (EXRAD)</option>
+			<option selected="selected" value="flight_track">Flight track</option>
+			<option value="hiwrap_ka">Hi-Alt Wind & Rain Airborne Profiler (HIWRAP-Ka)</option>
+			<option value="hiwrap_ku">Hi-Alt Wind & Rain Airborne Profiler (HIWRAP-Ku)</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_er2.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_er2.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><a href="/missions/P3-Payloads.pdf">P-3</a></td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="p3"  />
+		      <select name="prod" >
+			<option value="avaps">Adv Vert Atmos Profiling Sys (AVAPS)</option>
+			<option value="cloud_probe">Cloud Probe</option>
+			<option selected="selected" value="flight_track">Flight track</option>
+			<option value="phips">PHIPS</option>
+			<option value="tamms">Turbulent Air Motion Meas Sys (TAMMS)</option>
+			<option value="wisper">WISPER</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_dc8.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_dc8.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+	      </td>
+	      <td colspan=3 bgcolor=#c2c2c2><font size=+2>Ground Observations</font><br>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>Brookhaven</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="brookhaven"  />
+		      <select name="prod" >
+			<!--
+			<option value="met_station">met_station</option>
+			-->
+		      </select><select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select><select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_albert.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_albert.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>Manhattan</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="manhattan"  />
+		      <select name="prod" >
+			<option value="met_station">met_station</option>
+			<option selected="selected" value="parsivel2">parsivel2</option>
+		      </select><select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select><select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>Southampton</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="southampton"  />
+		      <select name="prod" >
+			<option selected="selected" value="met_station">met_station</option>
+			<option value="smartflux_flux">smartflux_flux</option>
+			<option value="smartflux_met">smartflux_met</option>
+			<option value="smartflux_sonic">smartflux_sonic</option>
+			<option value="smartflux_turb">smartflux_turb</option>
+		      </select><select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select><select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>Stonybrook</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="stonybrook"  />
+		      <select name="prod" >
+			<option selected="selected" value="met_station">met_station</option>
+			<option value="parsivel2">parsivel2</option>
+			<option value="pluvio">pluvio</option>
+			<option value="skycam">skycam</option>
+			<option value="solar_tracker">solar_tracker</option>
+		      </select><select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select><select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>Stonybrook Mobile Truck</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="stonybrookmobile"  />
+		      <select name="prod" >
+			<option selected="selected" value="met_station">met_station</option>
+		      </select><select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select><select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_bunch.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_bunch.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+	      </td>
+	      <td colspan=3 bgcolor=#c2c2c2><font size=+2>Radar Imagery</font><br>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>Brookhaven</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="brookhaven"  />
+		      <select name="prod" >
+			<option value="ceil075">ceil_7.5km</option>
+			<option value="dopp_lidar">dopp_lidar</option>
+			<option selected="selected" value="mrr2">mrr2</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 2 hours">Last 2 hours</option>
+			<option value="Last 4 hours">Last 4 hours</option>
+			<option value="Last 8 hours">Last 8 hours</option>
+			<option value="Last 12 hours">Last 12 hours</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_d3r.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_d3r.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>D3R</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="d3r"  />
+		      <select name="prod" >
+			<option selected="selected" value="ka_ppi_zdb">Ka Refl PPI</option>
+			<option value="ku_ppi_rhohv">Ku Rhohv PPI</option>
+			<option value="ku_ppi_vel">Ku Vel PPI</option>
+			<option value="ku_ppi_zdb">Ku Refl PPI</option>
+			<option value="ka_rhi_zdb">Ka Refl RHI</option>
+			<option value="ku_rhi_rhohv">Ku Rhohv RHI</option>
+			<option value="ku_rhi_vel">Ku Vel RHI</option>
+			<option value="ku_rhi_zdb">Ku Refl RHI</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 2 hours">Last 2 hours</option>
+			<option value="Last 4 hours">Last 4 hours</option>
+			<option value="Last 8 hours">Last 8 hours</option>
+			<option value="Last 12 hours">Last 12 hours</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_d3r.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_d3r.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>KaSPR</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="kaspr"  />
+		      <select name="prod" >
+			<option selected="selected" value="ppi_dbz">ppi dbz</option>
+			<option value="ppi_ldr">ppi ldr</option>
+			<option value="ppi_phidp">ppi phidp</option>
+			<option value="ppi_rhohv">ppi rhohv</option>
+			<option value="ppi_rhoxh">ppi rhoxh</option>
+			<option value="ppi_sw">ppi sw</option>
+			<option value="ppi_vel">ppi vel</option>
+			<option value="ppi_veldp">ppi veldp</option>
+			<option value="ppi_zdr">ppi zdr</option>
+                        <option value="">----------</option>
+			<option value="rhi_dbz">rhi dbz</option>
+			<option value="rhi_ldr">rhi ldr</option>
+			<option value="rhi_phidp">rhi phidp</option>
+			<option value="rhi_rhohv">rhi rhohv</option>
+			<option value="rhi_rhoxh">rhi rhoxh</option>
+			<option value="rhi_sw">rhi sw</option>
+			<option value="rhi_vel">rhi vel</option>
+			<option value="rhi_veldp">rhi veldp</option>
+			<option value="rhi_zdr">rhi zdr</option>
+                        <option value="">----------</option>
+			<option value="vpt_dbz">vpt dbz</option>
+			<option value="vpt_ldr">vpt ldr</option>
+			<option value="vpt_sw">vpt sw</option>
+			<option value="vpt_vel">vpt vel</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 2 hours">Last 2 hours</option>
+			<option value="Last 4 hours">Last 4 hours</option>
+			<option value="Last 8 hours">Last 8 hours</option>
+			<option value="Last 12 hours">Last 12 hours</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_d3r.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_d3r.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>Manhattan</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="manhattan"  />
+		      <select name="prod" >
+			<option value="ceil150">ceil_15km</option>
+			<option value="ceil150_cirrus">ceil_15km_cirrus</option>
+			<option selected="selected" value="mrr_pro">mrr_pro</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 2 hours">Last 2 hours</option>
+			<option value="Last 4 hours">Last 4 hours</option>
+			<option value="Last 8 hours">Last 8 hours</option>
+			<option value="Last 12 hours">Last 12 hours</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_dow.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_dow.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>NPOL</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="npol"  />
+		      <select name="prod" >
+			<option selected="selected" value="ppi_cz">ppi cz</option>
+			<option value="ppi_npid">ppi pid (NASA)</option>
+			<option value="ppi_rhohv">ppi rhohv</option>
+			<option value="ppi_vr">ppi vr</option>
+			<option value="ppi_zdr">ppi zdr</option>
+			<option value="rhi_cz">rhi cz</option>
+			<option value="rhi_npid">rhi pid (NASA)</option>
+			<option value="rhi_rhohv">rhi rhohv</option>
+			<option value="rhi_vr">rhi vr</option>
+			<option value="rhi_zdr">rhi zdr</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 2 hours">Last 2 hours</option>
+			<option value="Last 4 hours">Last 4 hours</option>
+			<option value="Last 8 hours">Last 8 hours</option>
+			<option value="Last 12 hours">Last 12 hours</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_field.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_field.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>Stonybrook</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="stonybrook"  />
+		      <select name="prod" >
+			<option value="mrr_pro">mrr_pro</option>
+			<option selected="selected" value="wband_spec_refl">wband_spec_refl (ROGER)</option>
+			<option selected="selected" value="wband_tseries">wband_tseries (ROGER)</option>
+			<option value="xband_ph_arr">xband_ph_arr (SKYLER)</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 2 hours">Last 2 hours</option>
+			<option value="Last 4 hours">Last 4 hours</option>
+			<option value="Last 8 hours">Last 8 hours</option>
+			<option value="Last 12 hours">Last 12 hours</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>Stonybrook Mobile Truck</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="stonybrookmobile"  />
+		      <select name="prod" >
+			<option selected="selected" value="dopp_lidar">dopp_lidar</option>
+			<option value="mrr">mrr</option>
+			<option value="xband_ph_arr">xband_ph_arr</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_wprof.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_wprof.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+	      </td>
+	      <td colspan=3 bgcolor=#c2c2c2><font size=+2>Soundings</font><br>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>skewt</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="skewt"  />
+		      <select name="prod" >
+			<option value="sbum">Stonybrook Mobile</option>
+			<option value="uiuc">UIUC Mobile</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 12 hours">Last 12 hours</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_field.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_field.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>text_sounding</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="text_sounding"  />
+		      <select name="prod" >
+			<option value="sbum">Stonybrook Mobile</option>
+			<option value="uiuc">UIUC Mobile</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 12 hours">Last 12 hours</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates_field.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates_field.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+	      </td>
+	    </tr>
+	  </table>
+	</td>
+      </tr>
+    </table>
+    <br><br>
+</div>

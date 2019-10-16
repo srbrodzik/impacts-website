@@ -1,0 +1,249 @@
+<script type="text/javascript">
+  /*
+  Form2Pop Script- By Peter Bailey (http://www.peterbailey.net)
+  Featured on JavaScriptKit.com
+  Visit http://www.javascriptkit.com for this script and more
+  */
+  
+  function createTarget(t){
+  window.open("", t, "width=600,height=550");
+  return true;
+  }
+  
+</script>  
+
+<div class="summary">
+  <script type="text/javascript">
+    function submitForm()
+    {
+    document.form1.target = "myActionWin";
+    window.open("","myActionWin","width=500,height=300,toolbar=0");
+    document.form1.submit();
+    }
+  </script>
+
+  <p class="std">
+    <table width="100%" border=1 cellspacing=1 cellpadding=10>
+      <tr valign="baseline" align="left" bgcolor=#99cc99>
+	<td>
+	  <h2>Browse by Date:</h2>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <form method="GET" action="/cgi-bin/ops/date_browse">
+	    Select Date(UTC):
+	    <select name="dateUTC" >
+	      <option selected="selected" value="20190821">2019/08/21 UTC</option>
+	      <option value="20190822">2019/08/22 UTC</option>
+	      <option value="20190823">2019/08/23 UTC</option>
+	      <option value="20190824">2019/08/24 UTC</option>
+	      <option value="20190825">2019/08/25 UTC</option>
+	      <option value="20190826">2019/08/26 UTC</option>
+	      <option value="20190827">2019/08/27 UTC</option>
+	    </select><input type=submit value="retrieve products">
+	  </form>
+	</td>
+      </tr>
+    </table>
+
+  <p class="std">
+    <table width="100%" border=1 cellspacing=1 cellpadding=10>
+      <tr valign="baseline" align="left" bgcolor=#99cc99>
+	<td colspan=1>
+	  <h2>Browse Model Analyses Products:</h2>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <table border=0 cellspacing=0 cellpadding=5>
+	    <tr>
+	      <td colspan=3 bgcolor=#c2c2c2><font size=+2>SBU WRF</font><br>
+
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>wrf_nam_04km</td>
+		  <td>
+		    <form method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded" onsubmit="return createTarget(this.target)" target="formtarget">
+		      <input type="hidden" name="category" value="model"  />
+		      <input type="hidden" name="platform" value="wrf_nam_04km"  />
+		      <select name="prod" >
+			<option value="01_pcp1">1hr_precip</option>
+			<option selected="selected" value="00_winds_sfc">10m_windspeed</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>		  
+		  <td>wrf_nam_12km</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="model"  />
+		      <input type="hidden" name="platform" value="wrf_nam_12km"  />
+		      <select name="prod" >
+			<option selected="selected" value="03_pcp3">3hr_precip</option>
+			<option value="03_snow3">3hr_snow</option>
+			<option value="00_temps_sfc">slp</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>		  
+		  <td>wrf_nam_36km</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="model"  />
+		      <input type="hidden" name="platform" value="wrf_nam_36km"  />
+		      <select name="prod" >
+			<option selected="selected" value="00_temps_sfc">sfc_slp</option>
+			<option value="00_slp_thickness">sfc_thick</option>
+			<option value="00_temps_500">500_temp</option>
+			<option value="00_700_RHomg">700_rel_hum</option>
+			<option value="03_pcp3">3hour_precip</option>
+			<option value="03_snow3">3hour_snow</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 24 Hours">Last 24 Hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+
+	      </td>
+	    </tr>
+	    <tr>
+	      <td colspan=3 bgcolor=#c2c2c2><font size=+2>SBU IMPACTS WRF</font><br>
+
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>wrf_gfs_04km_imp</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="model"  />
+		      <input type="hidden" name="platform" value="wrf_gfs_04km_imp"  />
+		      <select name="prod" >
+			<option value="03_pcp3">3hr_precip</option>
+			<option value="12_pcp12">12hr_precip</option>
+			<option value="00_melt">melting_level</option>
+			<option selected="selected" value="00_sfc">sfc</option>
+			<option value="00_wssfc">surf_ws</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>		  
+		  <td>wrf_gfs_36km_imp</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="model"  />
+		      <input type="hidden" name="platform" value="wrf_gfs_36km_imp"  />
+		      <select name="prod" >
+			<option value="03_pcp3">3hr_precip</option>
+			<option value="12_pcp12">12hr_precip</option>
+			<option value="00_300j">300_wind</option>
+			<option value="00_500vor">500_abs_vor</option>
+			<option selected="selected" value="00_500temp">500_temp</option>
+			<option value="00_850t">850_temp</option>
+			<option value="00_925rh">925_rh</option>
+			<option value="00_melt">melting_level</option>
+			<option value="00_sfc">sfc</option>
+			<option value="00_wssfc">sfc_ws</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+
+	      </td>
+	    </tr>
+	    
+	    <tr>
+	      <td colspan=3>
+		For more models please see the <a href="http://itpa.somas.stonybrook.edu/sbuwrf/">Stony Brook Operational WRF-ARW page</a>
+	      </td>
+	    </tr>
+	      
+	  </table>
+	</td>
+      </tr>
+    </table>
+    <br><br>
+</div>

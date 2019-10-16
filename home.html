@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UW/OLYMPEX</title>
+		    <link href="home.css" type="text/css" rel="stylesheet">
+		    <meta charset="utf-8" />
+		    <link rel="icon" href="http://pmm.nasa.gov/sites/default/files/imce/olympex-logo-smaller.png" type="image/png">
+
+	</head>
+	<body>
+		<div id="top">
+			<div id="topContent">
+			       <a href="http://pmm.nasa.gov/sites/default/files/imce/olympex-logo-smaller.png"><img src="http://pmm.nasa.gov/sites/default/files/imce/olympex-logo-smaller.png" alt="logo"></a>
+			        <p>OLYMPEX: A NASA/GPM Ground Validation Field Campaign in the Pacific Northwest</p> 
+			</div>        
+			    <ul>
+				  <li class="tab">Home</li>
+				  <li class="tab">Forecast</li>
+		          <li class="tab">Standard Obs</li>
+		          <li class="tab">Model Analyses</li>
+			      <li class="tab">OLYMPEX Obs</li>
+			      <li class="tab">Aircraft Flights</li>
+			      <li class="tab">Science Summaries</li>
+			      <li class="tab">Forecast Briefings</li>
+			      <li class="tab">Archive Links</li>
+		    	</ul>	  
+	    </div>
+	    <div id="main"></div>
+	    <div id="center">
+	      	<img class="bottom" src="nasa.png" alt="NASA">  
+	      	<p class="bottom">For questions, contact <a href="mailto:lynnm@washington.edu?subject=OLYMPEX">Lynn McMurdie</a></p>
+	      	<img class="bottom" src="http://olympex.atmos.washington.edu/gif/uw_logo.jpg" alt="UW" height="40">
+	    </div>    
+	</body>
+	<script type="text/javascript">
+			var starts = "page";
+			if (document.cookie ==""|document.cookie.indexOf(starts) == -1) {
+				bootHome();
+			} else{	
+				boot();
+			}
+			    var tabs = document.getElementsByClassName("tab");
+			   	var re = /\s/g;
+			    for (var i = 0; i < tabs.length; i++) {
+			    	tabs[i].onclick = function() {
+				    	deleteCookie();
+				    	/*for (var i = 0; i < tabs.length; i++) {
+				    		tabs[i].style.backgroundColor = "#c2dbdb";
+				    		tabs[i].style.color = "blue";
+				    	}
+				    	this.style.backgroundColor = "white";
+				    	this.style.color = "#009fc6";*/
+						if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+							xmlhttp = new XMLHttpRequest();
+						} else {// code for IE6, IE5
+							xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+						}
+						xmlhttp.onreadystatechange = function() {
+							if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+							    document.getElementById("main").innerHTML = "";
+							    document.getElementById("main").innerHTML = xmlhttp.responseText;
+							    var links = document.links;
+							    for (var i = 0; i < links.length; i++) {
+							    	if (links[i].href == window.location.href){
+							    		links[i].onclick = function() {
+							    			deleteCookie();
+							    		}
+							    	}
+							    }
+							}
+						}
+						if(!document.getElementsByTagName("body")[0].innerText != undefined){
+							var page = this.textContent.replace(re, "_");
+						} else{
+							var page = this.innerText.replace(re, "_");
+						}
+						 var d = new Date();
+    					d.setTime(d.getTime() +100000);
+    					var expires = "expires="+d.toUTCString();
+    					document.cookie = "page=" + page + "; " + expires;
+						var cookies = document.cookie.split(";");
+						var tabName = findCookie();
+						var Window = window.open(window.location.href);
+
+						/*xmlhttp.open("GET", "Home.html", true);
+						xmlhttp.send();*/
+			    	}
+			    }
+			function boot() {
+	 			var tabs = document.getElementsByClassName("tab");
+	 			var names = [];
+			    var tabName = findCookie();
+			    var re = /\s/g;
+			    for (var i = 0; i < tabs.length; i++) {
+			    		names[i] = tabs[i].textContent.replace(re,"_");
+			    	}	
+			    	tabIndex = names.indexOf(tabName);
+	 				for (var j = 0; j < tabs.length; j++) {
+				    	for (var i = 0; i < tabs.length; i++) {
+				    		tabs[i].style.backgroundColor = "#c2dbdb";
+				    	}
+				    	tabs[tabIndex].style.backgroundColor = "white";
+				    	tabs[tabIndex].style.color = "#009fc6";
+						if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+							xmlhttp = new XMLHttpRequest();
+						} else {// code for IE6, IE5
+							xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+						}
+						xmlhttp.onreadystatechange = function() {
+							if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+							    document.getElementById("main").innerHTML = "";
+							    document.getElementById("main").innerHTML = xmlhttp.responseText;
+							}
+						}
+						var re = /\s/g;
+						sessionStorage.test = tabName;
+						console.log(sessionStorage.test);
+						xmlhttp.open("GET", tabName + ".html", true);
+						xmlhttp.send();
+			    }
+	 		}
+	 	function bootHome() {
+			    var tabs = document.getElementsByClassName("tab");
+			    for (var j = 0; j < tabs.length; j++) {
+				    	for (var i = 0; i < tabs.length; i++) {
+				    		tabs[i].style.backgroundColor = "#c2dbdb";
+				    	}
+				    	tabs[0].style.backgroundColor = "white";
+				    	tabs[0].style.color = "#009fc6";
+						if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+							xmlhttp = new XMLHttpRequest();
+						} else {// code for IE6, IE5
+							xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+						}
+						xmlhttp.onreadystatechange = function() {
+							if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+							    document.getElementById("main").innerHTML = "";
+							    document.getElementById("main").innerHTML = xmlhttp.responseText;
+							}
+						}
+						var re = /\s/g;
+						if(!document.getElementsByTagName("body")[0].innerText != undefined){
+							var page = tabs[0].textContent.replace(re, "_");
+						} else{
+							var page = tabs[0].innerText.replace(re, "_");
+						}
+						var d = new Date();
+    					d.setTime(d.getTime() +100000);
+    					var expires = "expires="+d.toUTCString();
+						document.cookie = "page=" + page + "; " + expires;
+						if (findCookie) {
+			   				var tabName = findCookie();
+			   			} else{
+			   				var tabName = "Home";
+			   			}	
+						xmlhttp.open("GET", tabName + ".html", true);
+						xmlhttp.send();
+
+			    }
+	 	}
+	 	function deleteCookie() {
+	 		var date = new Date();
+	 		document.cookie = "page=;expires="+ date;
+	 	}
+	 	function findCookie() {
+	 		var re = /\s/g;
+	 		var cookies = document.cookie.split(";");
+			var cookieNames = [];
+		    for (var i = 0; i < cookies.length; i++) {
+		    	cookieNames[i]=cookies[i].replace(re,"");
+		    	if (cookieNames[i].match(/page=/)){
+		    		cookieIndex = i;
+		    	}
+		    }
+   			var tabName = cookieNames[cookieIndex].replace("page=","");
+   			return tabName; 
+	 	}
+	</script>
+</html>		

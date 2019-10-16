@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link href="home.css" type="text/css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <link rel="icon" href="http://impacts.atmos.washington.edu/gif/IMPACTSlogo_noBackground.png" type="image/png">
+  </head>
+  <body>
+    <div id="top">
+      <div id="topContent">
+	<a href="http://impacts.atmos.washington.edu/gif/IMPACTSlogo_noBackground.png"><img src="http://impacts.atmos.washington.edu/gif/IMPACTSlogo_small.png" alt="logo" style="background-color: transparent;"></a>
+	<p>IMPACTS: Investigation of Microphysics and Precipitation for Atlantic Coast-Threatening Snowstorms</p> 
+      </div>        
+      <ul>
+	<li class="tab">Home</li>
+	<li class="tab">Science Summaries</li>
+	<li class="tab">Standard Obs</li>
+	<li class="tab">Model Analyses</li>
+	<li class="tab">IMPACTS Obs</li>
+	<li class="tab">Aircraft Msns</li>
+	<li class="tab">Site Rpts</li>
+	<li class="tab">Forecast</li>
+	<li class="tab">Forecast Briefings</li>
+	<li class="tab">Aircraft Scorecards</li>
+	<li class="tab">Archive</li>
+      </ul>	  
+    </div>
+    <div id="main"></div>
+    <div id="center">
+      <img class="bottom" src="gif/nasa.png" alt="NASA">  
+      <p class="bottom">For questions, contact <a href="mailto:lynnmcmurdie@gmail.com?subject=IMPACTS">Lynn McMurdie</a></p>
+      <img class="bottom" src="http://impacts.atmos.washington.edu/gif/uw_logo.jpg" alt="UW" height="40">
+    </div>    
+  </body>
+  <script type="text/javascript">
+    boot();
+    var tabs = document.getElementsByClassName("tab");
+    var re = /\s/g;
+    
+    for (var i = 0; i < tabs.length; i++) {
+	tabs[i].onclick = function() {
+		if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp = new XMLHttpRequest();
+		} else {// code for IE6, IE5
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				document.getElementById("main").innerHTML = "";
+				document.getElementById("main").innerHTML = xmlhttp.responseText;
+				var links = document.links;
+				/*for (var i = 0; i < links.length; i++) {
+					if (links[i].href == window.location.href){
+						links[i].onclick = function() {
+						}
+					}
+				}*/
+			}
+		}
+		if(!document.getElementsByTagName("body")[0].innerText != undefined){
+			var page = this.textContent.replace(re, "_");
+		} else{
+			var page = this.innerText.replace(re, "_");
+		}
+		window.open("index.html?x=" + page);
+	}
+    }
+    function boot() {
+	var n = document.location.href.split("?x=");
+	var re = /\s/g;
+	if(n[1] === undefined){
+		sessionStorage.test = "Home";
+		document.title = "UW/IMPACTS - Home";
+	}else {
+		sessionStorage.test = n[1];
+		document.title = n[1].replace("_"," ");
+	}
+	var tabs = document.getElementsByClassName("tab");
+	var names = [];
+	for (var i = 0; i < tabs.length; i++) {
+		names[i] = tabs[i].textContent.replace(re,"_");
+	}	
+	tabIndex = names.indexOf(sessionStorage.test);
+		for (var i = 0; i < tabs.length; i++) {
+			tabs[i].style.backgroundColor = "#c2dbdb";
+			tabs[i].style.color = "#blue";
+		}
+		tabs[tabIndex].style.backgroundColor = "white";
+		tabs[tabIndex].style.color = "#009fc6";
+		if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp = new XMLHttpRequest();
+		} else {// code for IE6, IE5
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			document.getElementById("main").innerHTML = "";
+			document.getElementById("main").innerHTML = xmlhttp.responseText;
+		}
+	}
+	var re = /\s/g;
+	xmlhttp.open("GET", sessionStorage.test + ".html", true);
+	xmlhttp.send();
+  }
+  </script>
+
+</html>		
