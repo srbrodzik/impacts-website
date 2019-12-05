@@ -159,21 +159,22 @@
 	      </td>
 	    </tr>
 	    <tr>
-	      <td colspan=3 bgcolor=#c2c2c2><font size=+2>SBU IMPACTS WRF</font><br>
+	      <td colspan=3 bgcolor=#c2c2c2><font size=+2>OTHER MODELS</font><br>
 
 		<tr valign="baseline" align="left">
 		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-		  <td>wrf_gfs_04km_imp</td>
+		  <td>gfs_28km</td>
 		  <td>
 		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
 		      <input type="hidden" name="category" value="model"  />
-		      <input type="hidden" name="platform" value="wrf_gfs_04km_imp"  />
+		      <input type="hidden" name="platform" value="gfs_28km"  />
 		      <select name="prod" >
-			<option value="03_pcp3">3hr_precip</option>
-			<option value="12_pcp12">12hr_precip</option>
-			<option value="00_melt">melting_level</option>
-			<option selected="selected" value="00_sfc">sfc</option>
-			<option value="00_wssfc">surf_ws</option>
+			<option value="00_T2m_us">2 meter temp</option>
+			<option value="00_uv250_us">250mb wspd & mslp extrema</option>
+			<option value="00_z500_vort_us">500mb geopot ht, vorticity & wind</option>
+			<option value="00_temp_adv_fgen_700_us">700mb temp, T.Adv, fgen & wind</option>
+			<option value="06_ir_us">6hr avg simulated ir Tb</option>
+			<option selected="selected" value="06_ref_frzn_us">composite refl & mslp</option>
 		      </select>
 		      <select name="howmany" >
 			<option selected="selected" value="Latest">Latest</option>
@@ -196,22 +197,48 @@
 
 		<tr valign="baseline" align="left">
 		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>		  
-		  <td>wrf_gfs_36km_imp</td>
+		  <td>nam_12km</td>
 		  <td>
 		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
 		      <input type="hidden" name="category" value="model"  />
-		      <input type="hidden" name="platform" value="wrf_gfs_36km_imp"  />
+		      <input type="hidden" name="platform" value="nam_12km"  />
 		      <select name="prod" >
-			<option value="03_pcp3">3hr_precip</option>
-			<option value="12_pcp12">12hr_precip</option>
-			<option value="00_300j">300_wind</option>
-			<option value="00_500vor">500_abs_vor</option>
-			<option selected="selected" value="00_500temp">500_temp</option>
-			<option value="00_850t">850_temp</option>
-			<option value="00_925rh">925_rh</option>
-			<option value="00_melt">melting_level</option>
-			<option value="00_sfc">sfc</option>
-			<option value="00_wssfc">sfc_ws</option>
+			<option value="00_T2m_us">2 meter temp</option>
+			<option value="00_uv250_us">250mb wspd & mslp extrema</option>
+			<option value="00_z500_vort_us">500mb geopot ht, vorticity & wind</option>
+			<option value="00_temp_adv_fgen_700_us">700mb temp, T.Adv, fgen & wind</option>
+			<option selected="selected" value="06_ref_frzn_us">composite refl & mslp</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>		  
+		  <td>hrrr_03km</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="model"  />
+		      <input type="hidden" name="platform" value="hrrr_03km"  />
+		      <select name="prod" >
+			<option value="00_T2m_us">2 meter temp</option>
+			<option value="00_ir_us">Simulated IR Tb</option>
+			<option selected="selected" value="01_ref_frzn_us">composite refl & mslp</option>
 		      </select>
 		      <select name="howmany" >
 			<option selected="selected" value="Latest">Latest</option>
