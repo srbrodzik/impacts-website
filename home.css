@@ -1,0 +1,163 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	font-family: Helvetica,sans-serif;
+	font-size: 10pt;
+	position: absolute;
+	min-width: 100%;
+	width: 100%;
+}
+#top {
+	background: url("gif/impacts.jpg");
+	height: 220px;
+	#height: 320px;
+}
+.tab {
+	margin-right: 1px;
+	margin-left: 1px;
+	padding: 5px;
+}
+#top img {
+	vertical-align: middle;
+	height: 70px;
+}
+#top ul {
+	list-style-type: none;
+	height: 40px;
+    	padding: 0px;
+    	margin-bottom: 0px;
+    	margin-top: 0px;
+}
+#top p {
+	font-size: 16pt;
+}
+#topContent {
+	margin-top: 119px;
+	#margin-top: 219px;
+	text-align: center;
+	background-color: rgba(0,0,0,0.4);
+}
+.bottom {
+	display: inline;
+	vertical-align: middle;
+	margin: 5px;	
+}
+#center {
+	background: url("impacts.png") center;
+}
+#center a {
+	color: #3AF0ED;
+}
+.summary {
+	font-size: 10pt;
+	padding-top: 10px;
+	padding-right: 8.5px;
+	padding-left: 8.5px;
+	padding-bottom: 10px;
+}
+.summary h2 {
+	margin: 0px;
+}
+#main {
+	margin-right: auto;
+	margin-left: auto;
+	display: table;
+}
+#map {
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 54.16%;
+	margin-right: 5px;
+	margin-left: 5px;
+	overflow: hidden;
+}
+#main img {
+	border: 2px #5092c4 solid;
+	border-radius: 4px;
+}
+.break {
+	height: 2px;
+	width: 100%;
+	margin-top: 25px;
+}
+#about {
+	font-size: 13pt;
+	line-height: 200%;
+	padding: 10px;
+}
+#socialMedia {
+	padding-top: 19%;
+}
+#center, #top p {
+	color: white;
+}
+body, .break, .column {
+	background-color: #5092c4;
+}
+#genifo h2, #map h2, #reports h2, #top ul, #center {
+	text-align: center;
+}
+.tab, img.bottom{
+	border: #5092c4 3px solid;
+}
+#top ul, #top img, #topContent {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	white-space: nowrap;
+}
+.tab, #top a, #top p {
+	display: inline-block;
+}
+a, .tab {
+	color: blue;
+	font-weight: bold;
+	cursor: pointer;
+}
+#center, #top {
+	background-size: cover;
+	box-shadow: 1px 1px 1px black; 
+	overflow: hidden;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+#center, #main, #top {
+	width: 80%;
+	min-width: 1152px;
+}
+#reports, #geninfo, #map, .summary, #top li {
+	background-color: #c2dbdb;
+}
+#reports, #geninfo, #map {
+	text-align: center;
+	line-height: 150%;
+	vertical-align: top;
+}
+#geninfo, #reports {
+	width: 21.8%;
+	padding: 2px;
+}
+h1, h2, h3, #top p {
+	font-family: Georgia,sans-serif;
+}
+.summary a {
+	text-decoration: underline;
+}
+#main a {
+	text-decoration: none;
+	padding-bottom: 5px;
+}
+a:hover, #top li:hover {
+	color: #009fc6;
+}
+table {
+	border-spacing: 0px;
+}
+.column {
+	width: 0.5%;
+	height: 100%;
+}
+
+

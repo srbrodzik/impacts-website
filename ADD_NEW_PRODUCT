@@ -1,0 +1,15 @@
+To add a new product to the website:
+
+1. Modify html code 
+ops: Standard_Obs.html
+model: Model_Analyses.html
+research: IMPACTS_Obs.html
+
+2. Modify products hash info
+/home/disk/bob/impacts/bin/make.products_hash.pl
+
+3. Modify groups, if necessary (used by cgi-bin/imagewrap and prod_browse)
+/home/disk/user_www/brodzik/cgi-bin/impacts/groups.pl
+
+4. Run /home/disk/bob/impacts/bin/make.products_hash.pl (from step 2).
+
