@@ -158,7 +158,9 @@
 		      <input type="hidden" name="platform" value="totals"  />
 		      <select name="prod" >
 			<option selected="selected" value="precip24">24hr_precip</option>
+			<!--
 			<option value="snow">snow</option>
+			-->
 		      </select>
 		      <select name="howmany" >
 			<option selected="selected" value="Latest">Latest</option>
@@ -192,6 +194,7 @@
 		      <input type="hidden" name="platform" value="upper_air"  />
 		      <select name="prod" >
 			<option value="850mb">850mb</option>
+			<option value="700mb_fronto">700mb frontogenesis</option>
 			<option value="700mb">700mb</option>
 			<option value="500mb">500mb</option>
 			<option value="300mb">300mb</option>
@@ -222,32 +225,36 @@
 	      <td colspan=3 bgcolor=#c2c2c2><font size=+2>Radar Products</font><br>
 		<tr valign="baseline" align="left">
 		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-		  <td>nexrad</td>
+		  <td>nexrad_refl</td>
 		  <td>
 		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
 		      <input type="hidden" name="category" value="ops"  />
 		      <input type="hidden" name="platform" value="nexrad"  />
 		      <select name="prod" >
-			<option value="enx_bref">Albany Refl</option>
-			<option value="enx_vel">Albany Vel</option>
-			<option value="bgm_bref">Binghamton Refl</option>
-			<option value="bgm_vel">Binghamton Vel</option>
-			<option selected="selected" value="box_bref">Boston Refl</option>
-			<option value="box_vel">Boston Vel</option>
-			<option value="dox_bref">Dover Refl</option>
-			<option value="dox_vel">Dover Vel</option>
+			<option value="enx_bref">AlbanyNY Refl</option>
+			<option value="bgm_bref">BinghamtonNY Refl</option>
+			<option selected="selected" value="box_bref">BostonMA Refl</option>
+			<option value="lot_bref">ChicagoIL Refl</option>
+			<option value="cle_bref">ClevelandOH Refl</option>
+			<option value="dvn_bref">DavenportIA Refl</option>
+			<option value="dtx_bref">DetroitMI Refl</option>
+			<option value="dox_bref">DoverDE Refl</option>
+			<option value="vwx_bref">EvansvilleIN Refl</option>
+			<option value="grr_bref">GrandRapidsMI Refl</option>
+			<option value="grb_bref">GreenBayWI Refl</option>
+			<option value="ind_bref">IndianapolisIN Refl</option>
+			<option value="ilx_bref">LincolnIL Refl</option>
+			<option value="mkx_bref">MilwaukeeWI Refl</option>
+			<option value="tyx_bref">MontagueNY Refl</option>
 			<option value="mhx_bref">MoreheadNC Refl</option>
-			<option value="mhx_vel">MoreheadNC Vel</option>
-			<option value="okx_bref">NewYork Refl</option>
-			<option value="okx_vel">NewYork Vel</option>
-			<option value="dix_bref">Philadelphia Refl</option>
-			<option value="dix_vel">Philadelphia Vel</option>
+			<option value="okx_bref">NewYorkNY Refl</option>
+			<option value="iwx_bref">NorthWebsterIN Refl</option>
+			<option value="dix_bref">PhiladelphiaPA Refl</option>
 			<option value="gyx_bref">PortlandME Refl</option>
-			<option value="gyx_vel">PortlandME Vel</option>
-			<option value="rax_bref">Raleigh Refl</option>
-			<option value="rax_vel">Raleigh Vel</option>
-			<option value="ccx_bref">StateCollege Refl</option>
-			<option value="ccx_vel">StateCollege Vel</option>
+			<option value="rax_bref">RaleighNC Refl</option>
+			<option value="ccx_bref">StateCollegePA Refl</option>
+			<option value="lwx_bref">SterlingVA Refl</option>
+			<option value="iln_bref">WilmingtonOH Refl</option>
 		      </select>
 		      <select name="howmany" >
 			<option selected="selected" value="Latest">Latest</option>
@@ -273,7 +280,64 @@
 		    </form>
 		  </td>
 		</tr>
-
+		
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>nexrad_vel</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="ops"  />
+		      <input type="hidden" name="platform" value="nexrad"  />
+		      <select name="prod" >
+			<option value="enx_vel">AlbanyNY Vel</option>
+			<option value="bgm_vel">BinghamtonNY Vel</option>
+			<option selected="selected" value="box_vel">BostonMA Vel</option>
+			<option value="lot_vel">ChicagoIL Vel</option>
+			<option value="cle_vel">ClevelandOH Vel</option>
+			<option value="dvn_vel">DavenportIA Vel</option>
+			<option value="dtx_vel">DetroitMI Vel</option>
+			<option value="dox_vel">DoverDE Vel</option>
+			<option value="vwx_vel">EvansvilleIN Vel</option>
+			<option value="grr_vel">GrandRapidsMI Vel</option>
+			<option value="grb_vel">GreenBayWI Vel</option>
+			<option value="ind_vel">IndianapolisIN Vel</option>
+			<option value="ilx_vel">LincolnIL Vel</option>
+			<option value="mkx_vel">MilwaukeeWI Vel</option>
+			<option value="tyx_vel">MontagueNY Vel</option>
+			<option value="mhx_vel">MoreheadNC Vel</option>
+			<option value="okx_vel">NewYorkNY Vel</option>
+			<option value="iwx_vel">NorthWebsterIN Vel</option>
+			<option value="dix_vel">PhiladelphiaPA Vel</option>
+			<option value="gyx_vel">PortlandME Vel</option>
+			<option value="rax_vel">RaleighNC Vel</option>
+			<option value="ccx_vel">StateCollegePA Vel</option>
+			<option value="lwx_vel">SterlingVA Vel</option>
+			<option value="iln_vel">WilmingtonOH Vel</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 2 hours">Last 2 hours</option>
+			<option value="Last 4 hours">Last 4 hours</option>
+			<option value="Last 8 hours">Last 8 hours</option>
+			<option value="Last 12 hours">Last 12 hours</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
 		
 		<tr valign="baseline" align="left">
 		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -540,11 +604,14 @@
 		  <td>
 		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
 		      <input type="hidden" name="category" value="ops"  />
-		      <input type="hidden" name="platform" value="goes_west"  />
+		      <input type="hidden" name="platform" value="goes_east"  />
 		      <select name="prod" >
-			<option selected="selected" value="ir_ch14">ir_ch14</option>
+			<option value="ir_ch14">ir_ch14</option>
 			<option value="vis_ch02">vis_ch02</option>
 			<option value="wv_ch08">wv_ch08</option>
+			<option selected="selected" value="ir_4km">ir_4km (temp)</option>
+			<option value="vis_4km">vis_4km (temp)</option>
+			<option value="wv_4km">wv_4km (temp)</option>
 		      </select>
 		      <select name="howmany" >
 			<option selected="selected" value="Latest">Latest</option>
@@ -618,11 +685,14 @@
 			<option value="BUF">BuffaloNY (BUF)</option>
 			<option value="CHH">ChathamMA (CHH)</option>
 			<option value="CHS">CharlestonSC (CHS)</option>
+			<option value="DVN">DavenportIA (DVN)</option>
 			<option value="DTX">DetroitMI (DTX)</option>
 			<option value="GYX">GrayME (GYX)</option>
 			<option value="IAD">SterlingVA (IAD)</option>
 			<option value="ILN">WilmingtonOH (ILN)</option>
 			<option value="ILX">LincolnIL (ILX)</option>
+			<option value="MPX">MinneapolisMN (MPX)</option>
+			<option value="MHX">NewportNC (MHX)</option>
 			<option value="OKX">UptonNY (OKX)</option>
 			<option value="PIT">PittsburghPA (PIT)</option>
 			<option value="RNK">BlacksburgVA (RNK)</option>
@@ -661,11 +731,14 @@
 			<option value="BUF">BuffaloNY (BUF)</option>
 			<option value="CHH">ChathamMA (CHH)</option>
 			<option value="CHS">CharlestonSC (CHS)</option>
+			<option value="DVN">DavenportIA (DVN)</option>
 			<option value="DTX">DetroitMI (DTX)</option>
 			<option value="GYX">GrayME (GYX)</option>
 			<option value="IAD">SterlingVA (IAD)</option>
 			<option value="ILN">WilmingtonOH (ILN)</option>
 			<option value="ILX">LincolnIL (ILX)</option>
+			<option value="MPX">MinneapolisMN (MPX)</option>
+			<option value="MHX">NewportNC (MHX)</option>
 			<option value="OKX">UptonNY (OKX)</option>
 			<option value="PIT">PittsburghPA (PIT)</option>
 			<option value="RNK">BlacksburgVA (RNK)</option>
