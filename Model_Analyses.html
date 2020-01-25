@@ -45,6 +45,7 @@
 		      <select name="prod" >
 			<option value="00_500_avo">500hPa absolute vorticity</option>
 			<option value="00_700_dBZfronto">700hPa frontogenesis</option>
+			<option value="00_850_dBZfronto">850hPa frontogenesis</option>
 			<option value="00_refl_10cm">simulated reflectivity</option>
 			<option value="00_temps_sfc">surface temp</option>
 			<option selected="selected" value="03_pcp3">3hr precip</option>
@@ -79,6 +80,7 @@
 		      <select name="prod" >
 			<option value="00_500_avo">500hPa absolute vorticity</option>
 			<option value="00_700_dBZfronto">700hPa frontogenesis</option>
+			<option value="00_850_dBZfronto">850hPa frontogenesis</option>
 			<option value="00_refl_10cm">simulated reflectivity</option>
 			<option value="00_temps_sfc">surface temp</option>
 			<option selected="selected" value="03_pcp3">3hr precip</option>
@@ -113,6 +115,7 @@
 		      <select name="prod" >
 			<option value="00_500_avo">500hPa absolute vorticity</option>
 			<option value="00_700_dBZfronto">700hPa frontogenesis</option>
+			<option value="00_850_dBZfronto">850hPa frontogenesis</option>
 			<option value="00_refl_10cm">simulated reflectivity</option>
 			<option value="00_temps_sfc">surface temp</option>
 			<option selected="selected" value="03_pcp3">3hr precip</option>
@@ -154,7 +157,8 @@
 			<option value="00_T2m_us">2 meter temp</option>
 			<option value="00_uv250_us">250mb wspd & mslp extrema</option>
 			<option value="00_z500_vort_us">500mb geopot ht, vorticity & wind</option>
-			<option value="00_temp_adv_fgen_700_us">700mb temp, T.Adv, fgen & wind</option>
+			<option value="00_temp_adv_fgen_700_us">700hPa temp, T.Adv, fgen & wind</option>
+			<option value="00_T850_us">850hPa tempC, isotherms, wind & MSLP ctrs</option>
 			<option value="06_ir_us">6hr avg simulated ir Tb</option>
 			<option selected="selected" value="06_ref_frzn_us">composite refl & mslp</option>
 		      </select>
@@ -189,7 +193,8 @@
 			<option value="00_T2m_us">2 meter temp</option>
 			<option value="00_uv250_us">250mb wspd & mslp extrema</option>
 			<option value="00_z500_vort_us">500mb geopot ht, vorticity & wind</option>
-			<option value="00_temp_adv_fgen_700_us">700mb temp, T.Adv, fgen & wind</option>
+			<option value="00_temp_adv_fgen_700_us">700hPa temp, T.Adv, fgen & wind</option>
+			<option value="00_T850_us">850hPa tempC, isotherms, wind & MSLP ctrs</option>
 			<option selected="selected" value="06_ref_frzn_us">composite refl & mslp</option>
 		      </select>
 		      <select name="howmany" >
@@ -243,6 +248,43 @@
 		  </td>
 		</tr>
 
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>		  
+		  <td>hrrr_01km</td>
+		  <td>
+		    <form target="_blank" method="get" action="joe/cgi-bin/impacts/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="model"  />
+		      <input type="hidden" name="platform" value="hrrr_01km"  />
+		      <select name="prod" >
+			<option selected="selected" value="00_ctop">cloud top height</option>
+			<option value="00_cref_sfc">composite refl</option>
+			<option value="00_G114bt_sat">ir brightness temp</option>
+			<option value="00_lcc_sfc">low-level cloud cover</option>
+			<option value="00_mcc_sfc">mid-level cloud cover</option>
+			<option value="00_hcc_sfc">high-level cloud cover</option>
+			<option value="00_wind_250">250hPa wind</option>
+			<option value="00_temp_700">700hPa temp</option>
+			<option value="00_temp_850">850hPa temp</option>
+			<option value="00_temp_925">925hPa temp</option>
+		      </select>
+		      <select name="howmany" >
+			<option value="Latest">Latest</option>
+			<option selected="selected" value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
 	      </td>
 	    </tr>
 	    

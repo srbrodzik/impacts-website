@@ -19,19 +19,28 @@
 
 		<tr valign="baseline" align="left">
 		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>ER-2</td>
+		  <!--
 		  <td><a href="/missions/ER2-Payload-Mace.pdf">ER-2</a></td>
+		  -->
 		  <td>
 		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
 		      <input type="hidden" name="category" value="research"  />
 		      <input type="hidden" name="platform" value="er2"  />
 		      <select name="prod" >
 			<option value="ampr">AMPR</option>
-			<option value="cpl_backscatter">CPL 532nm Attenuated Total Backscatter</option>
+			<option value="cpl_355nm">CPL 355nm Attenuated Total Backscatter</option>
+			<option value="cpl_532nm">CPL 532nm Attenuated Total Backscatter</option>
+			<option value="cpl_1064nm">CPL 1064nm Attenuated Total Backscatter</option>
+			<option value="cpl_combo">CPL Attenuated Total Backscatter All Signals</option>
+			<option value="cpl_aerosol_od">CPL Aerosol Optical Depth</option>
+			<option value="cpl_cloud_od">CPL Cloud Optical Depth</option>
+			<option value="cpl_column_od">CPL Column (Total) Optical Depth</option>
 			<option value="cpl_depol_ratio">CPL Depolarization Ratio</option>
 			<option value="cpl_extinction_coef">CPL 532nm Extinction Coefficient</option>
 			<option value="cpl_feature_type">CPL Feature Type</option>
 			<option value="cpl_iwc">CPL 532nm Ice Water Content</option>
-			<option value="crs">Cloud Radar System (CRS)</option>
+			<option value="crs">Cloud Radar System (CRS)-NoQC</option>
 			<option value="cosmir_aft_conical">CoSMIR aft conical</option>
 			<option value="cosmir_along_track">CoSMIR along track</option>
 			<option value="cosmir_cross_track">CoSMIR cross track</option>
@@ -62,7 +71,10 @@
 
 		<tr valign="baseline" align="left">
 		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <!--
 		  <td><a href="/missions/P3-Payloads.pdf">P-3</a></td>
+		  -->
+		  <td>P-3</td>
 		  <td>
 		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
 		      <input type="hidden" name="category" value="research"  />
@@ -175,10 +187,10 @@
 			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
 		      </select><select name="start" >
 			<option selected="selected" value="Start Date">Start Date</option>
-			<!--#include virtual="/includes/dates_bunch.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select><select name="end" >
 			<option selected="selected" value="End Date">End Date</option>
-			<!--#include virtual="/includes/dates_bunch.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <input type="submit" name="submit" value="Get Data" />
 		    </form>
@@ -205,10 +217,10 @@
 			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
 		      </select><select name="start" >
 			<option selected="selected" value="Start Date">Start Date</option>
-			<!--#include virtual="/includes/dates_bunch.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select><select name="end" >
 			<option selected="selected" value="End Date">End Date</option>
-			<!--#include virtual="/includes/dates_bunch.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <input type="submit" name="submit" value="Get Data" />
 		    </form>
@@ -242,11 +254,11 @@
 		      </select>
 		      <select name="start" >
 			<option selected="selected" value="Start Date">Start Date</option>
-			<!--#include virtual="/includes/dates_d3r.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <select name="end" >
 			<option selected="selected" value="End Date">End Date</option>
-			<!--#include virtual="/includes/dates_d3r.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <input type="submit" name="submit" value="Get Data" />
 		    </form>
@@ -283,11 +295,11 @@
 		      </select>
 		      <select name="start" >
 			<option selected="selected" value="Start Date">Start Date</option>
-			<!--#include virtual="/includes/dates_d3r.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <select name="end" >
 			<option selected="selected" value="End Date">End Date</option>
-			<!--#include virtual="/includes/dates_d3r.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <input type="submit" name="submit" value="Get Data" />
 		    </form>
@@ -340,11 +352,11 @@
 		      </select>
 		      <select name="start" >
 			<option selected="selected" value="Start Date">Start Date</option>
-			<!--#include virtual="/includes/dates_d3r.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <select name="end" >
 			<option selected="selected" value="End Date">End Date</option>
-			<!--#include virtual="/includes/dates_d3r.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <input type="submit" name="submit" value="Get Data" />
 		    </form>
@@ -378,11 +390,11 @@
 		      </select>
 		      <select name="start" >
 			<option selected="selected" value="Start Date">Start Date</option>
-			<!--#include virtual="/includes/dates_dow.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <select name="end" >
 			<option selected="selected" value="End Date">End Date</option>
-			<!--#include virtual="/includes/dates_dow.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <input type="submit" name="submit" value="Get Data" />
 		    </form>
@@ -398,14 +410,12 @@
 		      <select name="prod" >
 			<option selected="selected" value="ppi_dbz">ppi dbz</option>
 			<option value="ppi_hid">ppi hydrometeor id</option>
-			<option value="ppi_phidp">ppi phidp</option>
 			<option value="ppi_rainr">ppi rainrate</option>
 			<option value="ppi_rhohv">ppi rhohv</option>
 			<option value="ppi_vel">ppi vel</option>
 			<option value="ppi_zdr">ppi zdr</option>
 			<option value="rhi_dbz">rhi dbz</option>
 			<option value="rhi_hid">rhi hydrometeor id</option>
-			<option value="rhi_phidp">rhi phidp</option>
 			<option value="rhi_rainr">rhi rainrate</option>
 			<option value="rhi_rhohv">rhi rhohv</option>
 			<option value="rhi_vel">rhi vel</option>
@@ -425,11 +435,11 @@
 		      </select>
 		      <select name="start" >
 			<option selected="selected" value="Start Date">Start Date</option>
-			<!--#include virtual="/includes/dates_field.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <select name="end" >
 			<option selected="selected" value="End Date">End Date</option>
-			<!--#include virtual="/includes/dates_field.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <input type="submit" name="submit" value="Get Data" />
 		    </form>
@@ -495,11 +505,11 @@
 		      </select>
 		      <select name="start" >
 			<option selected="selected" value="Start Date">Start Date</option>
-			<!--#include virtual="/includes/dates_wprof.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <select name="end" >
 			<option selected="selected" value="End Date">End Date</option>
-			<!--#include virtual="/includes/dates_wprof.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <input type="submit" name="submit" value="Get Data" />
 		    </form>
@@ -529,11 +539,11 @@
 		      </select>
 		      <select name="start" >
 			<option selected="selected" value="Start Date">Start Date</option>
-			<!--#include virtual="/includes/dates_field.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <select name="end" >
 			<option selected="selected" value="End Date">End Date</option>
-			<!--#include virtual="/includes/dates_field.html" -->
+			<!--#include virtual="/includes/dates.html" -->
 		      </select>
 		      <input type="submit" name="submit" value="Get Data" />
 		    </form>
