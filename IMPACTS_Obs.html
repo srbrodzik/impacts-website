@@ -80,10 +80,14 @@
 		      <input type="hidden" name="category" value="research"  />
 		      <input type="hidden" name="platform" value="p3"  />
 		      <select name="prod" >
+			<option value="2DS_distributions">2DS Distributions</option>
+			<option value="2DS_images">2DS Images</option>
 			<option value="avaps">Adv Vert Atmos Profiling Sys (AVAPS)</option>
-			<option value="cloud_probe">Cloud Probe</option>
 			<option value="dropsonde">Dropsonde</option>
+			<option value="FCDP_distributions">FCDP Distributions</option>
 			<option selected="selected" value="flight_track">Flight track</option>
+			<option value="HVPS3A_distributions">HVPS3A Distributions</option>
+			<option value="HVPS3A_images">HVPS3A Images</option>
 			<option value="phips_camera_C1">PHIPS Camera 1</option>
 			<option value="phips_camera_C2">PHIPS Camera 2</option>
 			<option value="tamms">Turbulent Air Motion Meas Sys (TAMMS)</option>
@@ -198,6 +202,32 @@
 		</tr>
 		<tr valign="baseline" align="left">
 		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>U of Albany</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="ualbany"  />
+		      <select name="prod" >
+			<option selected="selected" value="parsivel">parsivel psd tseries</option>
+		      </select><select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select><select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select><select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<!--
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 		  <td>Wallops (NASA)</td>
 		  <td>
 		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
@@ -226,6 +256,7 @@
 		    </form>
 		  </td>
 		</tr>
+		-->
 	      </td>
 	      <td colspan=3 bgcolor=#c2c2c2><font size=+2>Radar Imagery</font><br>
 		<tr valign="baseline" align="left">
@@ -454,10 +485,13 @@
 		      <input type="hidden" name="platform" value="stonybrook"  />
 		      <select name="prod" >
 			<option value="mwr">mwr</option>
-			<option value="roger">ROGER</option>
+			<option value="roger">ROGER (wband)</option>
+			<!--
 			<option selected="selected" value="wband_spec_refl">wband_spec_refl (ROGER)</option>
 			<option selected="selected" value="wband_tseries">wband_tseries (ROGER)</option>
-			<option value="xband_ph_arr">xband_ph_arr (SKYLER)</option>
+			-->
+			<option value="skyler_ppi">SKYLER ppi (xband phased array)</option>
+			<option value="skyler_rhi">SKYLER rhi (xband phased array)</option>
 		      </select>
 		      <select name="howmany" >
 			<option selected="selected" value="Latest">Latest</option>
@@ -494,6 +528,38 @@
 			<option selected="selected" value="ceil150">ceil_15km</option>
 			<option value="mrr_pro">mrr_pro</option>
 			<option value="xband_ph_arr">xband_ph_arr</option>
+		      </select>
+		      <select name="howmany" >
+			<option selected="selected" value="Latest">Latest</option>
+			<option value="Last 24 hours">Last 24 hours</option>
+			<option value="Last 48 hours">Last 2 days</option>
+			<option value="Last 72 hours">Last 3 days</option>
+			<option value="All">All</option>
+			<option value="Use Start/End Dates -&gt;">Use Start/End Dates -&gt;</option>
+		      </select>
+		      <select name="start" >
+			<option selected="selected" value="Start Date">Start Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <select name="end" >
+			<option selected="selected" value="End Date">End Date</option>
+			<!--#include virtual="/includes/dates.html" -->
+		      </select>
+		      <input type="submit" name="submit" value="Get Data" />
+		    </form>
+		  </td>
+		</tr>
+		<tr valign="baseline" align="left">
+		  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td>U of Albany</td>
+		  <td>
+		    <form target="_blank" method="get" action="/cgi-bin/ops/prod_browse.cgi" enctype="application/x-www-form-urlencoded">
+		      <input type="hidden" name="category" value="research"  />
+		      <input type="hidden" name="platform" value="ualbany"  />
+		      <select name="prod" >
+			<option selected="selected" value="mrr">mrr time/height</option>
+			<option value="mrr_cfad">mrr cfad</option>
+			<option value="mrr_parsivel_tseries">mrr/parsivel comparison</option>
 		      </select>
 		      <select name="howmany" >
 			<option selected="selected" value="Latest">Latest</option>
